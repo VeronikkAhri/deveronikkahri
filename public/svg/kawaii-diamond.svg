@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <path d="M150 58.25L102.25 146L150 233.75L197.75 146L150 58.25Z" fill="#FF86C8" filter="url(#glow)" />
+  <path d="M150 87.5L119.5 146L150 204.5L180.5 146L150 87.5Z" fill="#FFB8E0" filter="url(#glow)" />
+  <path d="M150 116.75L136.75 146L150 175.25L163.25 146L150 116.75Z" fill="#FFFFFF" filter="url(#glow)" />
+</svg>

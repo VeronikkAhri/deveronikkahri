@@ -1,0 +1,449 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Veronika's kawaii portfolio - 18yo Mexican designer and programmer with love for cute aesthetics and games!",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo">V✨</div>
+      <ul class="nav-links">
+        <li><a href="#about"><span>💖</span> About</a></li>
+        <li><a href="#skills"><span>🌟</span> Skills</a></li>
+        <li><a href="#projects"><span>✨</span> Projects</a></li>
+        <li><a href="#journey"><span>🎮</span> Journey</a></li>
+        <li><a href="#contact"><span>💌</span> Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
+    </nav>
+
+    <div class="cursor-follower"></div>
+
+    <div class="container">
+      <slot />
+    </div>
+
+    <footer class="footer">
+      <div class="footer-decorations">
+        <img
+          src="/svg/kawaii-star.svg"
+          alt="Kawaii star"
+          class="footer-deco star"
+        />
+        <img
+          src="/svg/kawaii-heart.svg"
+          alt="Kawaii heart"
+          class="footer-deco heart"
+        />
+        <img
+          src="/svg/kawaii-cloud.svg"
+          alt="Kawaii cloud"
+          class="footer-deco cloud"
+        />
+      </div>
+      <p>Made with 💖 by Veronika | Using Astro ✨ | &copy; 2025</p>
+      <div class="footer-icons">
+        <a
+          href="https://github.com/VeronikkAhri"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+            ></path>
+          </svg>
+        </a>
+        <a href="https://www.behance.net/" target="_blank" aria-label="Behance">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"
+            ></path>
+          </svg>
+        </a>
+        <a href="https://dribbble.com/" target="_blank" aria-label="Dribbble">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M12 0c-6.628 0-12 5.373-12 12s5.372 12 12 12 12-5.373 12-12-5.372-12-12-12zm9.885 11.441c-2.575-.422-4.943-.445-7.103-.073-.244-.563-.497-1.125-.767-1.68 2.31-1 4.165-2.358 5.548-4.082 1.35 1.594 2.197 3.619 2.322 5.835zm-3.842-7.282c-1.205 1.554-2.868 2.783-4.986 3.68-1.016-1.861-2.178-3.676-3.488-5.438.779-.197 1.591-.314 2.431-.314 2.275 0 4.368.779 6.043 2.072zm-10.516-.993c1.331 1.742 2.511 3.538 3.537 5.381-2.43.715-5.331 1.082-8.684 1.105.692-2.835 2.601-5.193 5.147-6.486zm-5.44 8.834l.013-.256c3.849-.005 7.169-.448 9.95-1.322.233.475.456.952.67 1.432-3.38 1.057-6.165 3.222-8.337 6.48-1.432-1.719-2.296-3.927-2.296-6.334zm3.829 7.81c1.969-3.088 4.482-5.098 7.598-6.027.928 2.42 1.609 4.91 2.043 7.46-3.349 1.291-6.953.666-9.641-1.433zm11.586.43c-.438-2.353-1.08-4.653-1.92-6.897 1.876-.265 3.94-.196 6.199.196-.437 2.786-2.028 5.192-4.279 6.701z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </footer>
+    <script>
+      // Mobile Navigation Toggle
+      document.addEventListener("DOMContentLoaded", () => {
+        const navToggle = document.querySelector(".nav-toggle") as HTMLElement;
+        const navLinks = document.querySelector(".nav-links") as HTMLElement;
+
+        if (navToggle && navLinks) {
+          navToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            navToggle.classList.toggle("active");
+          });
+        }
+
+        // Cursor follower
+        const cursor = document.querySelector(
+          ".cursor-follower"
+        ) as HTMLElement;
+
+        if (cursor) {
+          document.addEventListener("mousemove", (e) => {
+            cursor.style.left = e.clientX + "px";
+            cursor.style.top = e.clientY + "px";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --primary: #ff86c8;
+    --primary-light: #ffb8e0;
+    --accent: #b892ff;
+    --secondary-accent: #ffcef3;
+    --text: #333;
+    --text-light: #666;
+    --background: #fff8fa;
+    --card-bg: #ffffff;
+    --shadow: rgba(255, 134, 200, 0.15);
+    --gradient: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+  }
+
+  body {
+    font-family: "Quicksand", sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Nunito", sans-serif;
+    color: var(--primary);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    flex-grow: 1;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  a:hover {
+    color: var(--primary);
+  }
+
+  /* Cursor */
+  .cursor-follower {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 0 10px var(--primary);
+    transform: translate(-50%, -50%);
+    transition:
+      transform 0.1s ease-out,
+      opacity 0.3s ease;
+  }
+
+  body:hover .cursor-follower {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+  /* Navigation */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 15px var(--shadow);
+  }
+
+  .nav-logo {
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--primary);
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 2s infinite;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+  }
+
+  .nav-links li a {
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-links li a span {
+    transform: scale(1);
+    transition: transform 0.3s;
+  }
+
+  .nav-links li a:hover span {
+    transform: scale(1.3);
+  }
+
+  .nav-links li a:hover {
+    background-color: var(--primary-light);
+    color: white;
+  }
+
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .nav-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background: var(--primary);
+    transition: 0.3s;
+  }
+
+  /* Footer */
+  .footer {
+    position: relative;
+    text-align: center;
+    padding: 3rem 0 2rem;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    background: linear-gradient(
+      to top,
+      var(--primary-light) 0%,
+      transparent 100%
+    );
+    overflow: hidden;
+  }
+
+  .footer-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .footer-deco {
+    position: absolute;
+    opacity: 0.2;
+  }
+
+  .footer-deco.star {
+    width: 40px;
+    height: 40px;
+    top: 20%;
+    left: 15%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .footer-deco.heart {
+    width: 30px;
+    height: 30px;
+    top: 30%;
+    right: 15%;
+    animation: float 7s ease-in-out infinite 1s;
+  }
+
+  .footer-deco.cloud {
+    width: 50px;
+    height: 50px;
+    bottom: 20%;
+    right: 25%;
+    animation: float 8s ease-in-out infinite 2s;
+  }
+
+  .footer-icons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .footer-icons a {
+    color: var(--primary);
+    transition:
+      transform 0.3s,
+      color 0.3s;
+  }
+
+  .footer-icons a:hover {
+    transform: scale(1.2);
+    color: var(--accent);
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #f0f0f0;
+      --text-light: #cccccc;
+      --background: #1a1a2e;
+      --card-bg: #252546;
+      --shadow: rgba(185, 146, 255, 0.15);
+    }
+
+    .navbar {
+      background: rgba(26, 26, 46, 0.85);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      position: fixed;
+      top: 70px;
+      right: -100%;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      width: 80%;
+      height: calc(100vh - 70px);
+      padding: 2rem;
+      transition: right 0.3s ease;
+      box-shadow: -5px 0 15px var(--shadow);
+      z-index: 999;
+    }
+
+    .nav-links.active {
+      right: 0;
+    }
+
+    .nav-toggle {
+      display: block;
+    }
+
+    .nav-toggle.active .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    .nav-toggle.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.active .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .nav-links {
+        background: rgba(26, 26, 46, 0.95);
+      }
+    }
+  }
+</style>

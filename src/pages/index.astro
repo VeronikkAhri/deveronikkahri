@@ -1,16 +1,1153 @@
 ---
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import SkillCard from "../components/SkillCard.astro";
+import Timeline from "../components/Timeline.astro";
 
+// Skill categories with cute kawaii theme
+const skills = [
+  {
+    icon: "🎨",
+    title: "UI/UX Design",
+    description:
+      "Creating super adorable interfaces with kawaii aesthetics that make users smile while focusing on usability and cuteness!",
+  },
+  {
+    icon: "✨",
+    title: "Frontend Development",
+    description:
+      "Building responsive and ultra-cute websites using HTML, CSS, and JavaScript with a focus on animations and pastel colors.",
+  },
+  {
+    icon: "🐹",
+    title: "Golang",
+    description:
+      "My newest challenge! Learning Go for backend development with cute documentation and making tech approachable.",
+  },
+  {
+    icon: "🚀",
+    title: "Astro",
+    description:
+      "My favorite framework! Building fast, content-focused websites with Astro while adding cute animations and interactivity.",
+  },
+  {
+    icon: "💖",
+    title: "Kawaii Design",
+    description:
+      "My specialty is creating super pink, cute, and aesthetic designs that make everything sparkle with personality and joy!",
+  },
+  {
+    icon: "🎮",
+    title: "Game Art",
+    description:
+      "Designing adorable characters and interfaces for games inspired by my love for RPGs, anime, and cute collectible games.",
+  },
+];
+
+// Real-looking project examples with kawaii theme
+const projects = [
+  {
+    title: "PinkPaws Pet Shop",
+    description:
+      "A super cute e-commerce concept for a fictional pet shop with kawaii pet accessories in pastel pink colors.",
+    image:
+      "https://images.unsplash.com/photo-1560743173-567a3b5658b1?q=80&w=1000",
+    tags: ["UI/UX", "Frontend", "E-commerce"],
+    link: "#dialog-project1",
+    dialogId: "dialog-project1",
+  },
+  {
+    title: "Kawaii Weather App",
+    description:
+      "My first Astro project! A weather forecast app with animated chibi characters that change based on weather conditions.",
+    image:
+      "https://images.unsplash.com/photo-1522043436628-a4bd7867030b?q=80&w=1000",
+    tags: ["Astro", "Design", "Animation"],
+    link: "#dialog-project2",
+    dialogId: "dialog-project2",
+  },
+  {
+    title: "GoNotes API",
+    description:
+      "My first Golang project - a simple API for a note-taking app with pastel-themed documentation and kawaii mascot.",
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000",
+    tags: ["Golang", "API", "Backend"],
+    link: "#dialog-project3",
+    dialogId: "dialog-project3",
+  },
+  {
+    title: "Anime Character Designer",
+    description:
+      "An interactive tool for creating and customizing your own anime character with different outfits and accessories.",
+    image:
+      "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1000",
+    tags: ["HTML/CSS", "JavaScript", "Anime"],
+    link: "#dialog-project4",
+    dialogId: "dialog-project4",
+  },
+];
+
+// Educational journey with real information
+const education = [
+  {
+    year: "2025 - Present",
+    title: "Computer Science Freshman 💻",
+    company: "Universidad Nacional Autónoma de México",
+    description:
+      "Starting my formal education in Computer Science at UNAM! Currently learning programming fundamentals, algorithms, and already applying my kawaii design skills to my projects.",
+  },
+  {
+    year: "2024 - Present",
+    title: "Frontend Development Journey ✨",
+    company: "Self-taught & Online Communities",
+    description:
+      "Learning HTML, CSS, JavaScript, and Astro through online courses while building cute personal projects. I love adding sparkles and animations to everything I create!",
+  },
+  {
+    year: "2023 - 2024",
+    title: "Kawaii UI/UX Design 🎨",
+    company: "Udemy, YouTube & Design Communities",
+    description:
+      "Developed my personal kawaii design style through online courses and lots of practice. Focused on creating super cute interfaces that bring joy to users!",
+  },
+];
+
+// Interests for the about section
+const interests = [
+  "Video Games",
+  "Anime",
+  "Digital Art",
+  "Cute Stationery",
+  "Cats",
+  "Pastel Colors",
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Veronika's Kawaii Portfolio ✨">
+  <!-- Hero Section with Kawaii Elements -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="profile-container">
+        <div class="profile">
+          <img src="/me.jpg" alt="Veronika" class="profile-img" />
+        </div>
+      </div>
+      <h1>
+        <span class="greeting">¡Hola! I'm Veronika</span>
+        <span class="profession">18yo Mexican Designer & Developer</span>
+      </h1>
+      <p class="hero-text">
+        <span>🌸 Creating super kawaii digital experiences 🌸</span>
+        <span>Turning code into cute, magical web spaces 💖</span>
+      </p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn primary"
+          >About Me <span class="btn-emoji">💕</span></a
+        >
+        <a href="#projects" class="btn secondary"
+          >My Projects <span class="btn-emoji">✨</span></a
+        >
+      </div>
+      <div class="kawaii-decorations">
+        <img
+          src="/svg/kawaii-heart.svg"
+          alt="Kawaii Heart"
+          class="decoration heart"
+        />
+        <img
+          src="/svg/kawaii-star.svg"
+          alt="Kawaii Star"
+          class="decoration star"
+        />
+        <img
+          src="/svg/kawaii-cloud.svg"
+          alt="Kawaii Cloud"
+          class="decoration cloud"
+        />
+        <img
+          src="/svg/kawaii-ribbon.svg"
+          alt="Kawaii Ribbon"
+          class="decoration ribbon"
+        />
+        <img
+          src="/svg/kawaii-diamond.svg"
+          alt="Kawaii Diamond"
+          class="decoration diamond"
+        />
+      </div>
+      <div class="typing-container">
+        <span class="typing-text"></span>
+        <span class="cursor">|</span>
+      </div>
+    </div>
+    <div class="wave-divider">
+      <img src="/svg/wave-divider.svg" alt="Decorative wave" />
+    </div>
+  </header>
+
+  <main>
+    <!-- About Section with Real Information -->
+    <section id="about" class="section about">
+      <SectionTitle title="About Me" emoji="💖" />
+      <div class="about-container">
+        <div class="about-text">
+          <p>
+            ¡Hola! I'm <span class="highlight">Veronika</span>, an 18-year-old
+            aspiring developer and designer from Mexico City with a passion for
+            creating super kawaii, aesthetic digital experiences! 💕 I'm just
+            beginning my journey in programming as I start university at UNAM,
+            focusing on web development, UI/UX design, and exploring Golang.
+          </p>
+          <p>
+            I absolutely love everything <span class="highlight">pink</span>, <span
+              class="highlight">cute</span
+            >, and <span class="highlight">anime-inspired</span>! As <a
+              href="https://github.com/VeronikkAhri"
+              target="_blank">@VeronikkAhri</a
+            >, my goal is to combine my love for kawaii aesthetics with
+            functional, user-friendly websites and applications. Technology
+            should be approachable, delightful, and full of personality - just
+            like my designs! ✨
+          </p>
+          <p>
+            When I'm not coding or designing, you can find me playing RPGs and
+            MMOs, watching my favorite anime series, collecting kawaii
+            stationery, or sketching new chibi characters for my projects! I
+            believe the digital world should be as cute and magical as possible!
+            🌸
+          </p>
+
+          <div class="interests-container">
+            <h3>My Interests</h3>
+            <div class="interests">
+              {
+                interests.map((interest) => (
+                  <span class="interest-tag">{interest}</span>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-number">1+</span>
+            <span class="stat-label">Year Coding</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">6+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Design Tools</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+      <SectionTitle title="My Skills" emoji="🌟" />
+      <div class="skills-grid">
+        {
+          skills.map((skill) => (
+            <SkillCard
+              icon={skill.icon}
+              title={skill.title}
+              description={skill.description}
+            />
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Projects Section with Dialog Previews -->
+    <section id="projects" class="section projects">
+      <SectionTitle title="My Projects" emoji="🎀" />
+      <div class="projects-grid">
+        {
+          projects.map((project) => (
+            <ProjectCard
+              title={project.title}
+              description={project.description}
+              image={project.image}
+              tags={project.tags}
+              link={project.link}
+            />
+          ))
+        }
+      </div>
+
+      <!-- Project Dialog Modals -->
+      {
+        projects.map((project) => (
+          <dialog id={project.dialogId} class="project-dialog">
+            <div class="dialog-content">
+              <button
+                class="close-dialog"
+                onclick={`document.getElementById('${project.dialogId}').close()`}
+              >
+                ×
+              </button>
+              <h2>{project.title}</h2>
+              <img src={project.image} alt={project.title} />
+              <p>{project.description}</p>
+              <div class="project-tags">
+                {project.tags.map((tag) => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+              <div class="dialog-text">
+                <p>
+                  This is a concept project showcasing my design skills and
+                  aesthetic preferences. It represents my vision for{" "}
+                  {project.title.toLowerCase().includes("api")
+                    ? "backend development"
+                    : "user interface design"}
+                  .
+                </p>
+                <p>
+                  The project emphasizes {project.tags.join(", ")} with a kawaii
+                  theme throughout the user experience.
+                </p>
+              </div>
+            </div>
+          </dialog>
+        ))
+      }
+    </section>
+
+    <!-- Journey Section with Timeline -->
+    <section id="journey" class="section journey">
+      <SectionTitle title="My Journey" emoji="🚀" />
+      <div class="timeline-container">
+        <Timeline title="Education & Experience" items={education} />
+      </div>
+    </section>
+
+    <!-- Contact Section with Mexican Location -->
+    <section id="contact" class="section contact">
+      <SectionTitle title="Let's Connect" emoji="📮" />
+      <div class="contact-container">
+        <div class="contact-info">
+          <p>
+            I'd love to hear from you! Whether you want to collaborate on a
+            project, have questions about my work, or just want to say hi, feel
+            free to reach out.
+          </p>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <span class="contact-icon">📧</span>
+              <span>deveronikkahri@gmail.com</span>
+            </div>
+            <div class="contact-method">
+              <span class="contact-icon">💬</span>
+              <a href="https://github.com/VeronikkAhri" target="_blank"
+                >github.com/VeronikkAhri</a
+              >
+            </div>
+            <div class="contact-method">
+              <span class="contact-icon">📍</span>
+              <span>Mexico City, Mexico</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Your message here..."></textarea>
+          </div>
+          <button type="submit" class="btn primary">Send Message 💌</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Dialog functionality
+    document.addEventListener("DOMContentLoaded", () => {
+      // Get all project card links
+      const projectLinks = document.querySelectorAll(".project-link");
+
+      projectLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const dialogId = link.getAttribute("href");
+          if (dialogId && dialogId.startsWith("#")) {
+            const dialog = document.querySelector(
+              dialogId
+            ) as HTMLDialogElement;
+            if (dialog) dialog.showModal();
+          }
+        });
+      });
+
+      // Form submission handling (just a simple alert for demo)
+      const form = document.querySelector(".contact-form");
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert("Thanks for your message! This is just a demo form 💖");
+        });
+      }
+
+      // Typing animation effect
+      const typingElement = document.querySelector(
+        ".typing-text"
+      ) as HTMLElement | null;
+      if (typingElement) {
+        const phrases = [
+          "I ❤️ designing cute things!",
+          "Making the web kawaii...",
+          "Frontend developer & designer",
+          "Future game artist",
+          "VeronikkAhri here!",
+        ];
+
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 150;
+
+        function typeText() {
+          if (!typingElement) return;
+
+          const currentPhrase = phrases[phraseIndex];
+
+          if (isDeleting) {
+            // Deleting text
+            typingElement.textContent = currentPhrase.substring(
+              0,
+              charIndex - 1
+            );
+            charIndex--;
+            typingSpeed = 80; // Faster when deleting
+          } else {
+            // Typing text
+            typingElement.textContent = currentPhrase.substring(
+              0,
+              charIndex + 1
+            );
+            charIndex++;
+            typingSpeed = 150; // Normal speed when typing
+          }
+
+          // Check if phrase is complete
+          if (!isDeleting && charIndex === currentPhrase.length) {
+            isDeleting = true;
+            typingSpeed = 1500; // Pause at the end
+          } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length; // Move to next phrase
+            typingSpeed = 500; // Pause before starting new phrase
+          }
+
+          setTimeout(typeText, typingSpeed);
+        }
+
+        // Start the typing animation
+        setTimeout(typeText, 1500);
+      }
+    });
+  </script>
+</MainLayout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 1rem 4rem;
+    overflow: hidden;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 230, 240, 0.8) 0%,
+      rgba(255, 200, 230, 0.9) 100%
+    );
+    margin-top: 70px; /* Add space for the fixed navbar */
+  }
+
+  .hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .profile {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid white;
+    box-shadow: 0 10px 25px rgba(255, 134, 200, 0.5);
+    position: relative;
+    z-index: 1;
+    transform: translateY(0);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .profile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 134, 200, 0.7);
+  }
+
+  .profile::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 3px dashed var(--primary);
+    border-radius: 50%;
+    animation: spin 20s linear infinite;
+    z-index: -1;
+  }
+
+  .profile::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border: 2px dotted var(--accent);
+    border-radius: 50%;
+    animation: spin 30s linear infinite reverse;
+    z-index: -1;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.05);
+  }
+
+  h1 {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .greeting {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: var(--primary);
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    animation: fadeIn 1s ease-out;
+  }
+
+  .profession {
+    font-size: 1.5rem;
+    color: var(--accent);
+    font-weight: 600;
+    opacity: 0.9;
+    animation: slideUp 1s ease-out 0.5s both;
+  }
+
+  .hero-text {
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text);
+    animation: fadeIn 1.5s ease-out 1s both;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    animation: fadeIn 2s ease-out 1.5s both;
+  }
+
+  .btn {
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease-out;
+    z-index: -1;
+  }
+
+  .btn:hover::before {
+    left: 0;
+  }
+
+  .primary {
+    background-color: var(--primary);
+    color: white;
+  }
+
+  .secondary {
+    background-color: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+  }
+
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-emoji {
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .btn:hover .btn-emoji {
+    transform: scale(1.3) rotate(10deg);
+  }
+
+  .typing-container {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    min-height: 1.5em;
+  }
+
+  .typing-text {
+    color: var(--accent);
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: var(--primary);
+    animation: blink 1s step-end infinite;
+  }
+
+  .kawaii-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .kawaii-decorations .decoration {
+    position: absolute;
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  .heart {
+    width: 80px;
+    height: 80px;
+    right: 15%;
+    top: 30%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .star {
+    width: 60px;
+    height: 60px;
+    left: 20%;
+    top: 20%;
+    animation: float 7s ease-in-out infinite 1s;
+  }
+
+  .cloud {
+    width: 90px;
+    height: 90px;
+    right: 25%;
+    bottom: 40%;
+    animation: float 8s ease-in-out infinite 0.5s;
+  }
+
+  .diamond {
+    width: 70px;
+    height: 70px;
+    left: 15%;
+    bottom: 25%;
+    animation: float 9s ease-in-out infinite 1.5s;
+  }
+
+  .ribbon {
+    width: 80px;
+    height: 80px;
+    left: 75%;
+    bottom: 65%;
+    animation: float 7s ease-in-out infinite 0.8s;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  .wave-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 2;
+  }
+
+  .wave-divider img {
+    width: 100%;
+    height: auto;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  /* Section styles */
+  .section {
+    padding: 5rem 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section:nth-child(even) {
+    background-color: #fff3f9;
+  }
+
+  /* About section */
+  .about-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+  }
+
+  .highlight {
+    color: var(--primary);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+  }
+
+  .highlight::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: rgba(255, 184, 224, 0.3);
+    z-index: -1;
+    border-radius: 3px;
+  }
+
+  .interests-container {
+    margin-top: 2rem;
+  }
+
+  .interests-container h3 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+    font-size: 1.3rem;
+  }
+
+  .interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .interest-tag {
+    background: linear-gradient(90deg, var(--primary-light), var(--accent));
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 3px 8px rgba(255, 134, 200, 0.2);
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
+  }
+
+  .interest-tag:hover {
+    transform: translateY(-2px) rotate(3deg);
+    box-shadow: 0 5px 12px rgba(255, 134, 200, 0.3);
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px var(--shadow);
+  }
+
+  .stat {
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+    position: relative;
+  }
+
+  .stat::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+    transform: translateX(-50%);
+    border-radius: 10px;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+
+  /* Skills section */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  /* Projects section */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  /* Project Dialog Styles */
+  .project-dialog {
+    max-width: 90%;
+    width: 700px;
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    outline: none;
+    overflow: hidden;
+  }
+
+  .project-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  .dialog-content {
+    padding: 2rem;
+    position: relative;
+  }
+
+  .dialog-content h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .dialog-content img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+  }
+
+  .close-dialog {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--primary);
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+
+  .close-dialog:hover {
+    transform: scale(1.1);
+  }
+
+  .dialog-text {
+    margin-top: 1.5rem;
+  }
+
+  .dialog-text p {
+    margin-bottom: 1rem;
+  }
+
+  /* Journey section */
+  .timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Contact section */
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .contact-info {
+    line-height: 1.8;
+  }
+
+  .contact-methods {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-method {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+  }
+
+  .contact-icon {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    color: var(--primary);
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .contact-method:hover .contact-icon {
+    transform: scale(1.2) rotate(10deg);
+  }
+
+  .contact-form {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--primary-light);
+    border-radius: 10px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1rem;
+    color: var(--text);
+    background-color: transparent;
+    transition: all 0.3s;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 10px rgba(255, 134, 200, 0.2);
+  }
+
+  textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  /* Responsive styles */
+  @media (min-width: 768px) {
+    .about-container {
+      grid-template-columns: 2fr 1fr;
+    }
+
+    .contact-container {
+      grid-template-columns: 1fr 1.5fr;
+    }
+
+    .stats {
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .greeting {
+      font-size: 2.5rem;
+    }
+
+    .hero {
+      padding-top: 5rem;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .profile {
+      width: 180px;
+      height: 180px;
+    }
+  }
+</style>

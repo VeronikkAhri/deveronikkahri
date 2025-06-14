@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="800px" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Main Star shape -->
+  <path d="M400,80 L480,280 L700,280 L520,400 L600,620 L400,480 L200,620 L280,400 L100,280 L320,280 Z" 
+        fill="#FFB8E0" 
+        filter="url(#glow)" />
+  
+  <!-- Inner Star shape -->
+  <path d="M400,170 L450,290 L580,290 L470,370 L520,500 L400,410 L280,500 L330,370 L220,290 L350,290 Z" 
+        fill="#FF86C8" 
+        filter="url(#glow)" />
+  
+  <!-- Center circle -->
+  <circle cx="400" cy="330" r="50" fill="#FFFFFF" filter="url(#glow)" />
+  
+  <!-- Kawaii face -->
+  <!-- Eyes -->
+  <circle cx="380" cy="320" r="10" fill="#333333" />
+  <circle cx="420" cy="320" r="10" fill="#333333" />
+  
+  <!-- Blush spots -->
+  <circle cx="360" cy="340" r="15" fill="#FFB8E0" opacity="0.7" />
+  <circle cx="440" cy="340" r="15" fill="#FFB8E0" opacity="0.7" />
+  
+  <!-- Smile -->
+  <path d="M375,350 Q400,370 425,350" stroke="#333333" stroke-width="5" stroke-linecap="round" fill="none" />
+</svg>
